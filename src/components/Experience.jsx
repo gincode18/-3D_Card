@@ -1,13 +1,16 @@
-import { OrbitControls } from "@react-three/drei";
+import { Environment, OrbitControls, useTexture } from "@react-three/drei";
+import * as THREE from "three";
 
 export const Experience = () => {
+  const map = useTexture("textures/1.jpg");
   return (
     <>
+      <ambientLight intensity={0.6}></ambientLight>
+      <Environment preset="sunset"></Environment>
       <OrbitControls />
-      
       <mesh>
-        <boxGeometry />
-        <meshDepthMaterial />
+        <sphereGeometry args={[5, 31, 33]} />
+        <meshStandardMaterial map={map} side={THREE.BackSide} />
       </mesh>
     </>
   );
