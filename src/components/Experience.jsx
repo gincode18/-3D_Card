@@ -9,7 +9,7 @@ export const Experience = () => {
       <Environment preset="sunset"></Environment>
       <OrbitControls />
       <mesh>
-        <sphereGeometry args={[5, 31, 33]} />
+        <sphereGeometry args={[5, 60, 60]} />
         <meshStandardMaterial map={map} side={THREE.BackSide} />
       </mesh>
     </>
